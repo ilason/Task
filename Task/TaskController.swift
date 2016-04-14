@@ -16,6 +16,20 @@ class TaskController {
     
     var tasks: [Task] = []
     
+    var mockTasks: [Task] {
+       let sampleTask1 = Task(name: "Go shopping", notes: "At Costco", dueDate: nil)
+        let sampleTask2 = Task(name: "Love Mared", notes: "In bed", dueDate: NSDate())
+            
+//        let sampleTask3 = Task(name: "Go home")
+        
+        return [sampleTask1, sampleTask2]
+    }
+
+    
+    
+
+    
+    
     var completedTasks: [Task] {
         return tasks.filter({$0.isComplete})
     }
@@ -23,9 +37,12 @@ class TaskController {
     var incompletedTasks: [Task] {
         return tasks.filter({!$0.isComplete})
     }
+    init() {
+        tasks = mockTasks
+    }
     
     func addTask(task: Task) {
-        tasks.append(tasks)
+        tasks.append(task)
     }
     
     func removeTask(task: Task) {

@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Task: NSCoding {
+class Task: NSCoding, Equatable {
     private let nameKey = "name"
     private let notesKey = "notes"
     private let dueDateKey = "dueDate"
